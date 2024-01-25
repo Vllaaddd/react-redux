@@ -1,4 +1,3 @@
-import { configureStore } from "@reduxjs/toolkit";
 import { taskReducer } from "./taskSlice";
 import { filterReducer } from "./filterSlice";
 import { persistStore, persistReducer } from "redux-persist";
@@ -16,9 +15,6 @@ const rootReducer = combineReducers({
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
-const persistedFilterReducer = persistReducer(persistConfig, filterReducer)
-
 
 export const store = createStore(persistedReducer)
-
 export const persistor = persistStore(store)
