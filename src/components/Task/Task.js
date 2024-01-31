@@ -6,13 +6,13 @@ import { deleteTask, toggleCompleted } from "../../redux/taskSlice";
 export const Task = ({ task }) => {
   const dispatch = useDispatch()
   
-  const handleClick = (taskId) => {
-    dispatch(deleteTask(taskId))
-  }
+  // const handleClick = (taskId) => {
+  //   dispatch(deleteTask(taskId))
+  // }
 
-  const handleToggle = (taskId) => {
-    dispatch(toggleCompleted(taskId))
-  }
+  // const handleToggle = (taskId) => {
+  //   dispatch(toggleCompleted(taskId))
+  // }
 
   return (
     <div className={css.wrapper}>
@@ -20,10 +20,13 @@ export const Task = ({ task }) => {
         type="checkbox"
         className={css.checkbox}
         checked={task.completed}
-        onChange={() => handleToggle(task.id)}
+        // onChange={() => handleToggle(task.id)}
       />
       <p className={css.text}>{task.text}</p>
-      <button className={css.btn} onClick={() => handleClick(task.id)}>
+      <button 
+        className={css.btn}
+        // onClick={() => handleClick(task.id)} 
+      >
         <MdClose size={24} />
       </button>
     </div>
