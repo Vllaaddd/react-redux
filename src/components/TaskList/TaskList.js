@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Task } from "../Task/Task";
 import css from "./TaskList.module.css";
 import { useEffect } from "react";
-import { fetchTasks } from "../../redux/operations";
-import { visibleTasks } from '../../redux/selectors'
+import { fetchTasks } from "../../redux/tasks/operations";
+import { visibleTasks } from '../../redux/tasks/selectors'
 
 export const TaskList = () => {
   const dispatch = useDispatch()
