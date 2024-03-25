@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Tasks from "./pages/Tasks";
+import PrivateRoute from "./components/PrivateRoute";
+import RestrictedRoute from "./components/RestrictedRoute";
 
 export const router = createBrowserRouter([
     {
@@ -16,21 +18,16 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/tasks',
-                element: <Tasks />
+                element: <PrivateRoute component={Tasks} redirectTo='/login' />
             },
             {
                 path: '/login',
-                element: <Login />
+                element: <RestrictedRoute component={Login} redirectTo={'/'} />
             },
             {
                 path: '/register',
-                element: <Register />
+                element: <RestrictedRoute component={Register} redirectTo={'/'} />
             }
         ]
     }
 ])
-
-// /
-// /tasks
-// /login
-// /register

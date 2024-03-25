@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// axios.defaults.baseURL = 'https://65b92f2bb71048505a8a6156.mockapi.io/';
+axios.defaults.baseURL = 'https://goit-task-manager.herokuapp.com/';
 
 export const fetchTasks = createAsyncThunk('tasks/fetchTasks', async (_, thunkAPI) => {
     try {

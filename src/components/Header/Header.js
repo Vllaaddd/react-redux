@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import css from "./Header.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/auth/operations";
-import { selectIsLoggedIn } from "../../redux/tasks/selectors";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 export default function Header(){
     const dispatch = useDispatch()
@@ -12,10 +12,11 @@ export default function Header(){
     }
 
     const isLoggedIn = useSelector(selectIsLoggedIn)
+    console.log(isLoggedIn);
 
     return(
         <nav className={css.nav}>
-            <div>
+            <div className={css.linksContainer}>
                 <NavLink className={css.link} to={'/'}>Home</NavLink>
                 <NavLink className={css.link} to={'/tasks'}>Tasks</NavLink>
             </div>
