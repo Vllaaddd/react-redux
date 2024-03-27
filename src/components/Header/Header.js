@@ -12,7 +12,6 @@ export default function Header(){
     }
 
     const isLoggedIn = useSelector(selectIsLoggedIn)
-    console.log(isLoggedIn);
 
     return(
         <nav className={css.nav}>
